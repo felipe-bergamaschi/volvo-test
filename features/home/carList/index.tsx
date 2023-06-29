@@ -22,6 +22,7 @@ export function CarList({ data: car }: ICarListProps) {
   return (
     <Stack
       sx={{
+        mr: 2,
         '.MuiCardContent-root:hover': {
           '& .MuiTypography-root': {
             color: 'primary.main',
@@ -90,7 +91,7 @@ export function CarList({ data: car }: ICarListProps) {
         spacing={2}
         justifyContent='center'
         mt={2}
-        mb={4}
+        mb={2}
       >
         <Button
           endIcon={<ArrowForwardIosRounded sx={{ fontSize: '12px !important' }} />}
