@@ -1,10 +1,9 @@
 'use client'
 
 import { Body } from '@/components/body'
-import { Header } from '@/components/header'
 import { Hero } from '@/components/hero'
+import { CommonLayout } from '@/components/layout/common'
 import { useCars } from '@/query/useCars'
-import { Box } from '@mui/material'
 
 export default function Home() {
   const { isLoading, error, data } = useCars()
@@ -20,9 +19,7 @@ export default function Home() {
   }
 
   return (
-    <Box>
-      <Header />
-
+    <CommonLayout>
       <Hero />
 
       {/* TODO: faz um loading descente por favor */}
@@ -33,6 +30,6 @@ export default function Home() {
       ) : (
         <Body data={data} />
       )}
-    </Box>
+    </CommonLayout>
   )
 }
