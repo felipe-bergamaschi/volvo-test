@@ -1,5 +1,6 @@
 import { Footer } from '@/components/footer'
-import { Container, Box } from '@mui/material'
+import { Header } from '@/components/header'
+import { Box } from '@mui/material'
 
 interface ICommonLayoutProps {
   children: React.ReactNode
@@ -8,9 +9,9 @@ interface ICommonLayoutProps {
 export function CommonLayout({ children }: ICommonLayoutProps) {
   return (
     <Box>
-      <Container sx={{ maxWidth: '1260px !important', p: 0 }}>
-        {children}
-      </Container>
+      <Header />
+
+      {children}
 
       <Footer />
     </Box>
