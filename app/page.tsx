@@ -1,8 +1,8 @@
 'use client'
 
-import { Body } from '@/components/body'
 import { Hero } from '@/components/hero'
 import { CommonLayout } from '@/components/layout/common'
+import { Body } from '@/features/home/body'
 import { useCars } from '@/query/useCars'
 
 export default function Home() {
