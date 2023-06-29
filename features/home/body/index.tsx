@@ -4,32 +4,29 @@ import { Container, Stack, Typography } from '@mui/material'
 import { CarList } from '../carList';
 import { SessionWhyAVolvo } from '../sessionWhyAVolvo';
 import { Slider } from '@/components/slider';
+import { Text } from '@/components/text';
 
 interface IBodyProps {
   data: ICar[] | null
 }
 
 export function Body({ data }: IBodyProps) {
-  if (!data) return (
-    <Container>
-      <Typography variant='h4' fontWeight={500} fontSize={32}>
-        Ihhhh deu merda!
-      </Typography>
-    </Container>
-  )
-
   return (
     <Container sx={{ maxWidth: '1260px !important' }}>
       <Stack spacing={8}>
         <Stack spacing={4} alignItems='center'>
-          <Typography variant='h4' fontWeight={500} fontSize={32}>
+          <Text variant='title'>
             Todos os modelos Recharge
-          </Typography>
+          </Text>
 
           <Slider>
-            {data.map((car) => (
+            {data ? data.map((car) => (
               <CarList data={car} />
-            ))}
+            )) : (
+              <Text variant='body'>
+                Um erro ocorreu ao carregar os carros, tente recarregar a página
+              </Text>
+            )}
           </Slider>
         </Stack>
 
