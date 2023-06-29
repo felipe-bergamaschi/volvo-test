@@ -46,6 +46,7 @@ export function Slider({ children }: ISlider) {
           right: 0
         },
         '.slick-next, .slick-prev': {
+          position: 'absolute',
           width: 40,
           height: 40,
           zIndex: 1,
