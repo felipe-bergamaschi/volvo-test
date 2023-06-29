@@ -1,23 +1,64 @@
-import fs from "fs";
-import path from 'path';
-import util from 'util';
 import { NextResponse } from "next/server";
 
-const readFileAsync = util.promisify(fs.readFile);
-
 export async function GET() {
-  const filePath = path.join(process.cwd(), 'public', 'api', 'cars.json');
+  const cars = [
+    {
+      "id": "xc90-recharge",
+      "modelName": "XC90 Recharge",
+      "bodyType": "suv",
+      "modelType": "plug-in hybrid",
+      "imageUrl": "xc90_recharge.jpg"
+    },
+    {
+      "id": "xc60-recharge",
+      "modelName": "XC60 Recharge",
+      "bodyType": "suv",
+      "modelType": "plug-in hybrid",
+      "imageUrl": "xc60_recharge.jpg"
+    },
+    {
+      "id": "xc40-recharge",
+      "modelName": "XC40 Recharge",
+      "bodyType": "suv",
+      "modelType": "plug-in hybrid",
+      "imageUrl": "xc40_recharge.jpg"
+    },
+    {
+      "id": "xc40-bev",
+      "modelName": "XC40 Recharge",
+      "bodyType": "suv",
+      "modelType": "pure electric",
+      "imageUrl": "xc40_bev.jpg"
+    },
+    {
+      "id": "v90-recharge",
+      "modelName": "V90 Recharge",
+      "bodyType": "estate",
+      "modelType": "plug-in hybrid",
+      "imageUrl": "v90_recharge.jpg"
+    },
+    {
+      "id": "v60-recharge",
+      "modelName": "V60 Recharge",
+      "bodyType": "estate",
+      "modelType": "plug-in hybrid",
+      "imageUrl": "v60_recharge.jpg"
+    },
+    {
+      "id": "s90-recharge",
+      "modelName": "S90 Recharge",
+      "bodyType": "sedan",
+      "modelType": "plug-in hybrid",
+      "imageUrl": "s90_recharge.jpg"
+    },
+    {
+      "id": "s60-recharge",
+      "modelName": "S60 Recharge",
+      "bodyType": "sedan",
+      "modelType": "plug-in hybrid",
+      "imageUrl": "s60_recharge.jpg"
+    }
+  ]
 
-  try {
-    const data = await readFileAsync(filePath, 'utf8');
-    const jsonData = JSON.parse(data);
-
-    const response = jsonData
-
-    return NextResponse.json(response);
-  } catch (error) {
-    const response = null
-
-    return NextResponse.json(response);
-  }
+  return NextResponse.json(cars);
 }

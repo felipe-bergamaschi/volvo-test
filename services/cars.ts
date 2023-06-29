@@ -1,4 +1,4 @@
-[
+export const cars = [
   {
     "id": "xc90-recharge",
     "modelName": "XC90 Recharge",
