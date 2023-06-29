@@ -4,6 +4,9 @@ import "./globals.css";
 
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { createTheme } from '@mui/material/styles';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 const MuiTheme = createTheme({
   palette: {
@@ -29,13 +32,15 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
 
-      <ThemeProvider theme={MuiTheme}>
-        <CssBaseline />
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider theme={MuiTheme}>
+          <CssBaseline />
 
-        <body>
-          {children}
-        </body>
-      </ThemeProvider>
+          <body>
+            {children}
+          </body>
+        </ThemeProvider>
+      </QueryClientProvider>
     </html>
   )
 }
