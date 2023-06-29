@@ -2,7 +2,7 @@ import { Typography } from '@mui/material'
 
 interface ITextProps {
   children: React.ReactNode;
-  variant?: 'title' | 'subtitle' | 'body';
+  variant?: 'title' | 'subtitle' | 'body' | 'small';
 }
 
 export function Text({ children, variant = 'body' }: ITextProps) {
@@ -23,6 +23,12 @@ export function Text({ children, variant = 'body' }: ITextProps) {
       variant: 'body1',
       fontWeight: 400,
       fontSize: 16,
+      color: 'text.secondary'
+    },
+    small: {
+      variant: 'body2',
+      fontWeight: 400,
+      fontSize: 14,
       color: 'text.secondary'
     }
   }
