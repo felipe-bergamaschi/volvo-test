@@ -1,5 +1,5 @@
 import { ICar } from '@/types'
-import { Container, Stack } from '@mui/material'
+import { Container, Stack, Skeleton } from '@mui/material'
 
 import { CarList } from '../carList';
 import { SessionWhyAVolvo } from '../sessionWhyAVolvo';
@@ -21,9 +21,7 @@ export function Body({ data, isLoading }: IBodyProps) {
           </Text>
 
           {isLoading ? (
-            <Text variant='body'>
-              Carregando...
-            </Text>
+            <Skeleton variant="rectangular" width={'100%'} height={345} />
           ) : (
             <Slider>
               {data ? data.map((car) => (
