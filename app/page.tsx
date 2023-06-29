@@ -8,8 +8,6 @@ import { useCars } from '@/query/useCars'
 export default function Home() {
   const { isLoading, error, data } = useCars()
 
-  console.log({ isLoading, error, data })
-
   if (error) {
     return (
       <div>
@@ -22,14 +20,7 @@ export default function Home() {
     <CommonLayout>
       <Hero />
 
-      {/* TODO: faz um loading descente por favor */}
-      {isLoading ? (
-        <div>
-          loading
-        </div>
-      ) : (
-        <Body data={data} />
-      )}
+      <Body data={data} isLoading={isLoading} />
     </CommonLayout>
   )
 }
