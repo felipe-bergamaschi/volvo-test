@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import { useTheme, useMediaQuery } from '@mui/material';
 
 import { ArrowForwardIosRounded } from '@mui/icons-material';
 
@@ -14,6 +15,10 @@ interface ICarListProps {
 }
 
 export function CarList({ data: car }: ICarListProps) {
+  const theme = useTheme();
+
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Stack
       sx={{
@@ -44,8 +49,8 @@ export function CarList({ data: car }: ICarListProps) {
         </Typography>
 
         <Stack
-          direction='row'
-          spacing={0.5}
+          direction={isMobile ? 'column' : 'row'}
+          spacing={isMobile ? 0 : 0.5}
           mb={2}
         >
           <Typography sx={{ fontSize: 16 }} fontWeight={500}>

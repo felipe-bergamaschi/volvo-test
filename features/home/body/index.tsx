@@ -18,7 +18,7 @@ export function Body({ data }: IBodyProps) {
   )
 
   return (
-    <Container sx={{ maxWidth: '1260px !important', p: 0 }}>
+    <Container sx={{ maxWidth: '1260px !important' }}>
       <Stack spacing={8}>
         <Stack spacing={4} alignItems='center'>
           <Typography variant='h4' fontWeight={500} fontSize={32}>
