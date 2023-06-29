@@ -6,6 +6,7 @@ export function Footer() {
     <Stack
       alignItems='center'
       spacing={1}
+      mt={8}
       sx={{
         p: 2,
         bgcolor: '#fafafa'
