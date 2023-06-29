@@ -3,6 +3,7 @@ import { Container, Stack, Typography } from '@mui/material'
 
 import { CarList } from '../carList';
 import { SessionWhyAVolvo } from '../sessionWhyAVolvo';
+import { Slider } from '@/components/slider';
 
 interface IBodyProps {
   data: ICar[] | null
@@ -25,20 +26,11 @@ export function Body({ data }: IBodyProps) {
             Todos os modelos Recharge
           </Typography>
 
-          {/* TODO: coloca um slide */}
-          <Stack
-            spacing={2}
-            direction='row'
-            width={'100%'}
-            overflow={'hidden'}
-            sx={{
-              overflowX: 'auto',
-            }}
-          >
+          <Slider>
             {data.map((car) => (
               <CarList data={car} />
             ))}
-          </Stack>
+          </Slider>
         </Stack>
 
         <SessionWhyAVolvo />
