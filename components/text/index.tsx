@@ -10,17 +10,20 @@ export function Text({ children, variant = 'body' }: ITextProps) {
     title: {
       variant: 'h4',
       fontWeight: 500,
-      fontSize: 32
+      fontSize: 32,
+      color: 'text.primary'
     },
     subtitle: {
-      variant: 'h6',
-      fontWeight: 400,
-      fontSize: 24
+      variant: 'h3',
+      fontWeight: 500,
+      fontSize: 20,
+      color: 'text.primary'
     },
     body: {
       variant: 'body1',
       fontWeight: 400,
-      fontSize: 16
+      fontSize: 16,
+      color: 'text.secondary'
     }
   }
 
@@ -29,6 +32,7 @@ export function Text({ children, variant = 'body' }: ITextProps) {
       variant={variants[variant].variant as any}
       fontWeight={variants[variant].fontWeight}
       fontSize={variants[variant].fontSize}
+      color={variants[variant].color}
     >
       {children}
     </Typography>
