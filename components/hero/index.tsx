@@ -6,6 +6,7 @@ export function Hero() {
       width='100%'
       height='650px'
       position='relative'
+      mb={8}
       sx={{
         '& video': {
           width: '100%',
