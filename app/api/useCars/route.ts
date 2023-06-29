@@ -12,21 +12,11 @@ export async function GET() {
     const data = await readFileAsync(filePath, 'utf8');
     const jsonData = JSON.parse(data);
 
-    const response = {
-      status: 200,
-      body: {
-        data: jsonData
-      }
-    };
+    const response = jsonData
 
     return NextResponse.json(response);
   } catch (error) {
-    const response = {
-      status: 200,
-      body: {
-        data: null
-      }
-    };
+    const response = null
 
     return NextResponse.json(response);
   }
